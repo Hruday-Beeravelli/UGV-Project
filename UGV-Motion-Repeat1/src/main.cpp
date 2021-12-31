@@ -16,7 +16,37 @@ void setup() {
   Serial.begin(9600);
 }
 
- void loop() {
+void Forward()
+{
+  
+    Motor1.moveMotor(0.55 * 100);
+    Motor2.moveMotor(0.55 * 100);
+}
+void Backward()
+{
+  
+    Motor1.moveMotor(-0.55 * 100);
+    Motor2.moveMotor(-0.55 * 100);
+}
+void Left()
+{
+  
+    Motor1.moveMotor(0.55 * 100);
+    Motor2.moveMotor(-0.55 * 100);
+}
+void Right()
+{
+  
+    Motor1.moveMotor(-0.55 * 100);
+    Motor2.moveMotor(0.55 * 100);
+}
+void Lock()
+{
+Motor1.lockMotor();
+Motor2.lockMotor();
+}
+
+void loop() {
 Dabble.processInput();
 
 if(GamePad.isTrianglePressed())
@@ -138,33 +168,3 @@ if(GamePad.isStartPressed())
 loop1=1;
 }
  }
-
-void Forward()
-{
-  
-    Motor1.moveMotor(0.55 * 100);
-    Motor2.moveMotor(0.55 * 100);
-}
-void Backward()
-{
-  
-    Motor1.moveMotor(-0.55 * 100);
-    Motor2.moveMotor(-0.55 * 100);
-}
-void Left()
-{
-  
-    Motor1.moveMotor(0.55 * 100);
-    Motor2.moveMotor(-0.55 * 100);
-}
-void Right()
-{
-  
-    Motor1.moveMotor(-0.55 * 100);
-    Motor2.moveMotor(0.55 * 100);
-}
-void Lock()
-{
-Motor1.lockMotor();
-Motor2.lockMotor();
-}
